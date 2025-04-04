@@ -16,6 +16,7 @@ import { initializePassport } from "./config/passport.config.js";
 import { CONFIG } from "../src/config/config.js"
 import { orderRoutes } from "./router/order.routes.js";
 import { ticketPurchasedRoutes } from "./router/ticket.routes.js";
+import { mocksRoutes } from "./router/mocks.routes.js";
 
 connectMongoDB();
 const PORT = CONFIG.PORT;
@@ -51,6 +52,7 @@ app.use("/api/carts", cartsRoutes);
 app.use("/api/auth", authRouter);
 app.use("/api/orders", orderRoutes);
 app.use("/api/carts", ticketPurchasedRoutes);
+app.use("/api/mocks", mocksRoutes);
 
 
 app.listen(PORT, () => {
